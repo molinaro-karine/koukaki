@@ -1,1 +1,1 @@
-{"version":3,"sources":["style.css","style.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB;;;;;;;;EAAA;AAUA;EACI,oBAAA;ADCJ","file":"style.css"}
+{"version":3,"sources":["style.css","style.scss","sass/_sectionOscars.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB;;;;;;;;EAAA;ACAA;EACI,kBAAA;EACA,aAAA;EACA,8BAAA;EACA,iBAAA;EACA,kBAAA;EACA,mBAAA;EACA,mBAAA;AFWJ;AEPI;EACI,sBAAA;EACA,iBAAA;AFSR;AENI;EACI,eAAA;EACA,gBAAA;EACA,YAAA;EACA,2CAAA;EACA,kBAAA;EACA,iBAAA;EACA,4BAAA;EACA,wBAAA;EACA,2BAAA;EACA,qDAAA;AFQR;AENQ;EACI,gBAAA;AFQZ","file":"style.css"}
