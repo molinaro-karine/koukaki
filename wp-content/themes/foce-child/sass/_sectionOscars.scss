@@ -12,12 +12,14 @@
     .imgOscars {
         mix-blend-mode: darken;
         margin-top: -30px;
+        height: 129px;
+        width: 278px;
     }
 
     .titreOscar {
         font-size: 35px;
         font-weight: 700;
-        color: white;
+        color: #FFF5E9;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         padding: 1.8em 2em;
         line-height: 45px;
@@ -28,6 +30,8 @@
 
         h2 {
             text-align: left;
+            
+           
         }
     }
 }

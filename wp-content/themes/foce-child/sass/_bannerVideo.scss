@@ -1,0 +1,11 @@
+.banner {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+
+    .video {
+        position: relative;
+        height: 100%;
+        z-index: 1;
+    }
+}
