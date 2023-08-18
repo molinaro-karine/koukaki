@@ -17,6 +17,19 @@
   margin-right: 230px;
   align-items: center;
 }
+.eventOscars::before {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  left: -130px;
+  top: -80px;
+}
+.eventOscars::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  right: -320px;
+  top: -130px;
+  z-index: -1;
+}
 .eventOscars .imgOscars {
   mix-blend-mode: darken;
   margin-top: -30px;
@@ -72,10 +85,113 @@
 .banner {
   position: relative;
   overflow: hidden;
-  margin-top: 0;
+  margin-top: 20px;
 }
 .banner .video {
   position: relative;
   height: 100%;
   z-index: 1;
+}
+
+.titleAnimation {
+  display: inline-block;
+  margin-right: 15px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.2s ease-in, transform 0.5s ease-in;
+}
+.titleAnimation.visibility {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.story h2::after,
+.story__article::after,
+#studio h2::after {
+  animation: rotate 15s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#studio h2::before {
+  animation: rotate 15s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.eventOscars::before, .eventOscars::after,
+.site-footer ul::before,
+.site-footer ul::after {
+  animation: rotate 15s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.orchidMenu,
+.flowerMenu,
+.sunflowerMenu,
+.randomflowerMenu,
+.hibiscusMenu {
+  animation: rotate 15s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  animation: floatAnimation 3s ease-in-out infinite alternate;
+}
+@keyframes floatAnimation {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Styles pour le menu burger */
+.main-navigation {
+  display: flex;
+  position: fixed;
+  width: 1440px;
+}
+.main-navigation ul {
+  font-weight: 800;
+  display: flex;
+  flex-direction: row;
+  margin-left: 580px;
+}
+.main-navigation button {
+  margin-left: 400px;
 }/*# sourceMappingURL=style.css.map */

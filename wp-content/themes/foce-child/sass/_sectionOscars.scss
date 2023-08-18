@@ -7,7 +7,21 @@
     margin-right: 230px;
     align-items: center;
 
-   
+    &::before {
+        content: url('./assets/images/Sunflower.png');
+        position: absolute;
+        left: -130px;
+        top: -80px;
+    }
+
+    &::after {
+        content: url('./assets/images/orchid.png');
+        position: absolute;
+        right: -320px;
+        top: -130px;
+        z-index: -1;
+
+    }
 
     .imgOscars {
         mix-blend-mode: darken;

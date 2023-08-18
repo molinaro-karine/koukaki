@@ -1,0 +1,18 @@
+/* Styles pour le menu burger */
+.main-navigation {
+    display: flex;
+    position: fixed;
+    width: 1440px;
+
+    ul {
+        font-weight: 800;
+        display: flex;
+        flex-direction: row;
+        margin-left: 580px;
+    }
+
+    button {
+        margin-left: 400px;
+    }
+}
+
