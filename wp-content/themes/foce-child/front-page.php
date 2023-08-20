@@ -26,11 +26,11 @@ get_header();
             </article>
 
             <article id="place">
-                <div>
+                <div class="containerCloud">
                     <h3>Le Lieu</h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
-                    <img class="bigCloud" src="<?php echo get_theme_file_uri() . '/assets/images/cloud/big_cloud.png'; ?>" alt="grandNuage">
-                    <img class="littleCloud" src="<?php echo get_theme_file_uri() . '/assets/images/cloud/little_cloud.png'; ?>" alt="petitNuage">
+                    <img  class="bigCloud" src="<?php echo get_theme_file_uri() . '/assets/images/cloud/big_cloud.png'; ?>" alt="grandNuage">
+                    <img  class="littleCloud" src="<?php echo get_theme_file_uri() . '/assets/images/cloud/little_cloud.png'; ?>" alt="petitNuage">
                 </div>
 
             </article>

@@ -1,3 +1,5 @@
+/****Flower rotation effect****/
+
 @mixin rotateFlowers {
     animation: rotate 15s linear infinite;
 
@@ -8,6 +10,44 @@
 
         100% {
             transform: rotate(360deg);
+        }
+    }
+}
+
+/****Location section with moving clouds****/ 
+
+@mixin moveCloud { 
+    //animation: moveCloud 4s ease-in-out;
+    animation: moveCloud 5s infinite alternate;
+
+    @keyframes moveCloud { 
+        from { 
+          transform: translateX(0); 
+        } 
+     
+        to { 
+          transform: translateX(-300px); 
+        } 
+      }
+   
+}
+
+/****title floating animation****/
+
+@mixin floatAnimation {
+    animation: floatAnimation 3s ease-in-out infinite alternate;
+
+      @keyframes floatAnimation {
+        0% {
+            transform: translate(-50%, -50%);
+        }
+
+        50% {
+            transform: translate(-50%, -60%);
+        }
+
+        100% {
+            transform: translate(-50%, -50%);
         }
     }
 }

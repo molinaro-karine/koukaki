@@ -47,11 +47,12 @@
   background-size: contain;
   background-position: center;
   background-image: url("./assets/images/oscar_bg.png");
-}
-.eventOscars .titreOscar h2 {
   text-align: left;
 }
 
+/****Flower rotation effect****/
+/****Location section with moving clouds****/
+/****title floating animation****/
 .story #place {
   display: flex;
   background-image: url("./assets/images/cloud/image_place.png");
@@ -60,7 +61,7 @@
   background-size: cover;
   margin-top: -100px;
 }
-.story #place div {
+.story #place .containerCloud {
   margin-left: 10em;
   margin-top: 100px;
 }
@@ -71,7 +72,6 @@
   top: -380px;
   left: 880px;
   filter: blur(10px);
-  z-index: 1;
 }
 .story #place .littleCloud {
   width: 142px;
@@ -79,7 +79,18 @@
   top: -330px;
   left: 650px;
   position: relative;
-  filter: blur(12px);
+  filter: blur(10px);
+}
+.story #place .moveCloud {
+  animation: moveCloud 5s infinite alternate;
+}
+@keyframes moveCloud {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-300px);
+  }
 }
 
 .banner {
@@ -93,6 +104,9 @@
   z-index: 1;
 }
 
+/****Flower rotation effect****/
+/****Location section with moving clouds****/
+/****title floating animation****/
 .titleAnimation {
   display: inline-block;
   margin-right: 15px;
