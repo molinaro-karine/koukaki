@@ -21,8 +21,9 @@ get_header();
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
            
+        <!--carousel-->
             <article>
-               <!--carousel-->
+                <?php get_template_part('template-parts/carouselOfCharacters'); ?>
             </article>
 
             <article id="place">
