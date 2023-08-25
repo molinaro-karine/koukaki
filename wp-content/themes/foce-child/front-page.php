@@ -22,9 +22,9 @@ get_header();
             </article>
            
         <!--carousel-->
-            <article>
+         
                 <?php get_template_part('template-parts/carouselOfCharacters'); ?>
-            </article>
+        
 
             <article id="place">
                 <div class="containerCloud">

@@ -40,15 +40,19 @@
     <div class="fullscreenMenu">
         <img class ="logoFullscreen" src="<?php echo get_theme_file_uri() . '/assets/images/logoMenu.png'; ?>" alt="logo menu fullscreen">
         <img class ="orchidMenu" src="<?php echo get_theme_file_uri() . '/assets/images/orchid.png'; ?>" alt="logo menu fullscreen">
-        <img class ="flowerMenu" src="<?php echo get_theme_file_uri() . '/assets/images/Flower.png'; ?>" alt="logo menu fullscreen">
-        <img class ="sunflowerMenu" src="<?php echo get_theme_file_uri() . '/assets/images/Sunflower.png'; ?>" alt="logo menu fullscreen">
-        <img class ="randomflowerMenu" src="<?php echo get_theme_file_uri() . '/assets/images/Random_flower.png'; ?>" alt="logo menu fullscreen">
+        <img class ="flowerMenu" src="<?php echo get_theme_file_uri() . '/assets/images/flower.png'; ?>" alt="logo menu fullscreen">
+        <img class ="sunflowerMenu" src="<?php echo get_theme_file_uri() . '/assets/images/sunflower.png'; ?>" alt="logo menu fullscreen">
+        <img class ="randomflowerMenu" src="<?php echo get_theme_file_uri() . '/assets/images/random_flower.png'; ?>" alt="logo menu fullscreen">
+        <img class ="hibiscusflowerMenu" src="<?php echo get_theme_file_uri() . '/assets/images/hibiscus.png'; ?>" alt="logo menu fullscreen">
+        <img class ="blueCatMenu" src="<?php echo get_theme_file_uri() . '/assets/images/blueCat.png'; ?>" alt="logo menu fullscreen">
+        <img class ="orangeCatMenu" src="<?php echo get_theme_file_uri() . '/assets/images/orangeCat.png'; ?>" alt="logo menu fullscreen">
+        <img class ="blackCatMenu" src="<?php echo get_theme_file_uri() . '/assets/images/blackCat.png'; ?>" alt="logo menu fullscreen">
       
        
      
         <ul>
             <li><a href="#story">Histoire</a></li>
-            <li><a href="#">Personnages</a></li>
+            <li><a href="#characters">Personnages</a></li>
             <li><a href="#place">Lieu</a></li>
             <li><a href="#studio">Studio Koukaki</a></li>
         </ul>
