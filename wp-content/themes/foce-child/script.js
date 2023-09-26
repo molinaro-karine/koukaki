@@ -1,56 +1,107 @@
-/****Tell the observer which elements to track****/
-const observer = new IntersectionObserver((entries) => {
-  console.log(entries);
+// Function for triggering the fade-in animation with the entry parameter
+function fadeInAnimation(entry) {
+  // Adding the 'fadeIn' class to the "entry" element to trigger the fade-in animation created in css
+  entry.target.classList.add("fadeIn");
+
+  // Animation appearance of titles
+  const title = entry.target.querySelector("h2, h3");
+
+  // Checking if the title exists and if it has content
+  if (title && title.textContent) {
+    // Division of title content into words
+    const words = title.textContent.split(" ");
+
+    // Clear title content
+    title.textContent = "";
+
+    // Creation of 'span' elements for each word of the title and addition of the 'titleAnimation' class
+    words.forEach((word) => {
+      const span = document.createElement("span");
+      span.classList.add("titleAnimation");
+      span.textContent = word;
+      title.appendChild(span);
+    });
+
+    // Select all 'span' elements with 'titleAnimation' class inside the title
+    const spans = title.querySelectorAll(".titleAnimation");
+
+    // Progressively adding the 'visibility' class to each 'span' element with a delay
+    spans.forEach((span, index) => {
+      const delay = index === 0 ? 400 : index * 600;
+
+      // Added 'visibility' class with specified delay
+      setTimeout(() => {
+        span.classList.add("visibility");
+      }, delay);
+    });
+  }
+}
+
+// Creation of the intersection observer
+const sectionObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
-    const bigCloud = entry.target.querySelector(".bigCloud");
-    const littleCloud = entry.target.querySelector(".littleCloud");
-
     if (entry.isIntersecting) {
-      bigCloud.classList.add("moveCloud");
-      littleCloud.classList.add("moveCloud");
-      return; // if we added the class, exit the function
+      fadeInAnimation(entry);
+      observer.unobserve(entry.target);
     }
-
-    // We're not intersecting, so remove the class!
-    bigCloud.classList.remove("moveCloud");
-    littleCloud.classList.remove("moveCloud");
   });
 });
 
-observer.observe(document.querySelector(".containerCloud"));
+// Selection of sections to animate
+const sections = document.querySelectorAll(
+  ".story, #characters, #place, #studio,.eventOscars,.titreOscar, .site-footer"
+);
 
-// parallax vidéo avec simpleParallaxJS
+// Add intersection observer to each section
+sections.forEach((section) => {
+  sectionObserver.observe(section);
+});
 
-document.addEventListener("DOMContentLoaded", function () {
-  const video = document.querySelector(".video");
+//cloud animation
+const elementsToMove = document.querySelectorAll(".cloud");
 
-  new simpleParallax(video, {
-    orientation: "right",
-    scale: 1.12,
-    delay: 0.5,
-    transition: "ease-in-out",
+let moveObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      entry.target.style.animation = `moveCloud 5s ease-in`;
+    } else {
+      entry.target.style.animation = "none";
+    }
   });
 });
 
-// Carrousel Characters
-const swiper = new Swiper(".mySwiper", {
-  centeredSlides: true,
-  slidesPerView: "auto",
+elementsToMove.forEach((element) => {
+  moveObserver.observe(element);
+});
+
+//Swiper
+var swiper = new Swiper(".swiper-container", {
+  loop: true,
+  loopAdditionalSlides: 4,
   speed: 1000,
   autoplay: {
-    delay: 1000,
-    disableOnInteraction: false,
+    delay: 3000,
   },
-  loop: true,
-  loopedSlides: 2,
-  loopAdditionalSlides: 1,
   effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
   coverflowEffect: {
-    slideShadows: false,
     rotate: 50,
     stretch: 0,
     depth: 100,
     modifier: 1,
+    slideShadows: false,
+  },
+  breakpoints: {
+    390: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    990: {
+      slidesPerView: 3,
+      spaceBetween: 80,
+    },
   },
 });
 

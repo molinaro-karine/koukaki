@@ -8,108 +8,6 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-.eventOscars {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 100px;
-  margin-left: 230px;
-  margin-right: 230px;
-  align-items: center;
-}
-.eventOscars::before {
-  content: url("./assets/images/Sunflower.png");
-  position: absolute;
-  left: -130px;
-  top: -80px;
-}
-.eventOscars::after {
-  content: url("./assets/images/orchid.png");
-  position: absolute;
-  right: -320px;
-  top: -130px;
-  z-index: -1;
-}
-.eventOscars .imgOscars {
-  mix-blend-mode: darken;
-  margin-top: -30px;
-}
-.eventOscars .imgOscars .oscar_img {
-  height: 129px;
-  width: 278px;
-}
-.eventOscars .titreOscar {
-  font-size: 42px;
-  font-weight: 700;
-  color: #FFF5E9;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  padding: 94px;
-  line-height: 45px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-image: url("./assets/images/oscar_bg.png");
-  text-align: left;
-  height: 350px;
-}
-
-/****Flower rotation effect****/
-/****Location section with moving clouds****/
-/****title floating animation****/
-.story #place {
-  display: flex;
-  background-image: url("./assets/images/cloud/image_place.png");
-  width: 100%;
-  min-height: 699px;
-  background-size: cover;
-  margin-top: -100px;
-}
-.story #place .containerCloud {
-  margin-left: 10em;
-  margin-top: 100px;
-}
-.story #place .bigCloud {
-  width: 316px;
-  height: 122px;
-  position: relative;
-  top: -380px;
-  left: 880px;
-  filter: blur(10px);
-}
-.story #place .littleCloud {
-  width: 142px;
-  height: 55px;
-  top: -330px;
-  left: 650px;
-  position: relative;
-  filter: blur(10px);
-}
-.story #place .moveCloud {
-  animation: moveCloud 5s infinite alternate;
-}
-@keyframes moveCloud {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-300px);
-  }
-}
-
-.banner {
-  position: relative;
-  overflow: hidden;
-}
-.banner .video {
-  position: relative;
-  height: 100%;
-  margin-top: 120px;
-  z-index: 1;
-}
-
-/****Flower rotation effect****/
-/****Location section with moving clouds****/
-/****title floating animation****/
 .fadeIn {
   animation: fadeIn 1s ease-in-out;
 }
@@ -124,6 +22,343 @@
   }
 }
 
+/****Flower rotation effect****/
+/****Location section with moving clouds****/
+/****We define the mixins breakpoints mobile and tablet****/
+.eventOscars {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-left: 230px;
+  margin-right: 230px;
+  align-items: center;
+}
+@media only screen and (max-width: 390px) {
+  .eventOscars {
+    flex-direction: column;
+    margin: 26px;
+  }
+  .eventOscars::before {
+    content: none;
+  }
+}
+.eventOscars::before {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  left: -130px;
+  top: -80px;
+}
+@media only screen and (max-width: 1024px) {
+  .eventOscars::before {
+    content: none;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .eventOscars::before {
+    flex-direction: column;
+    margin: 26px;
+  }
+  .eventOscars::before .eventOscars::after {
+    display: none;
+  }
+}
+.eventOscars::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  right: -320px;
+  top: -130px;
+  z-index: -1;
+}
+@media only screen and (max-width: 1024px) {
+  .eventOscars::after {
+    content: none;
+  }
+}
+.eventOscars .imgOscars {
+  mix-blend-mode: darken;
+  margin-top: -30px;
+}
+.eventOscars .imgOscars .oscar_img {
+  height: 129px;
+  width: 278px;
+}
+@media only screen and (max-width: 390px) {
+  .eventOscars .imgOscars .oscar_img {
+    margin-right: 31px;
+    height: 84px;
+    width: 210px;
+    margin-top: 20px;
+  }
+}
+.eventOscars .titreOscar {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #FFF5E9;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 94px;
+  line-height: 45px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("./assets/images/oscar_bg.png");
+  text-align: left;
+  height: 350px;
+}
+@media only screen and (max-width: 1024px) {
+  .eventOscars .titreOscar {
+    font-size: 1.5rem;
+    padding: 37px;
+    height: 20vh;
+    line-height: 30px;
+  }
+  .eventOscars .titreOscar .titleAnimation {
+    opacity: 1;
+  }
+  .eventOscars .titreOscar .fadeIn {
+    content: none;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .eventOscars .titreOscar {
+    height: 20vh;
+    width: 403px;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 35px;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/****Flower rotation effect****/
+/****Location section with moving clouds****/
+/****We define the mixins breakpoints mobile and tablet****/
+main {
+  overflow: hidden;
+}
+
+.story {
+  margin-top: 100px;
+}
+.story h2::after {
+  height: 155px;
+}
+@media only screen and (max-width: 390px) {
+  .story {
+    margin-top: 28px;
+  }
+  .story .titleAnimation {
+    opacity: 1;
+  }
+}
+
+#studio ::after {
+  height: 108px;
+}
+
+@media only screen and (max-width: 390px) {
+  .story__article {
+    font-size: 1.2em;
+    text-align: left;
+    width: 92%;
+  }
+  .story__article::after {
+    display: none;
+  }
+  .story__article #studio h2::before {
+    display: none;
+  }
+  .story h2, #studio h2 {
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+  }
+  .story h2 .titleAnimation, #studio h2 .titleAnimation {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/****Flower rotation effect****/
+/****Location section with moving clouds****/
+/****We define the mixins breakpoints mobile and tablet****/
+.story #place {
+  display: flex;
+  background-image: url("./assets/images/cloud/image_place.png");
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+  margin-top: -100px;
+}
+@media only screen and (max-width: 390px) {
+  .story #place {
+    min-height: 10vh;
+    animation: none !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .story #place {
+    min-height: 500px;
+  }
+}
+.story #place .containerCloud {
+  margin-left: 10em;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 390px) {
+  .story #place .containerCloud {
+    margin-left: 73px;
+    height: 31vh;
+    min-height: 10vh;
+  }
+  .story #place .containerCloud p {
+    padding-left: 0;
+  }
+  .story #place .containerCloud h3 {
+    margin-top: 74px;
+    margin-left: 0;
+  }
+}
+.story #place .bigCloud {
+  width: 316px;
+  height: 122px;
+  position: relative;
+  top: -380px;
+  left: 880px;
+  filter: blur(10px);
+}
+@media only screen and (max-width: 1024px) {
+  .story #place .bigCloud {
+    display: none;
+  }
+}
+.story #place .littleCloud {
+  width: 142px;
+  height: 55px;
+  top: -330px;
+  left: 650px;
+  position: relative;
+  filter: blur(10px);
+}
+@media only screen and (max-width: 1024px) {
+  .story #place .littleCloud {
+    display: none;
+  }
+}
+@keyframes moveCloud {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-300px);
+  }
+}
+
+.banner {
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1024px) {
+  .banner {
+    min-height: 400px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .banner {
+    min-height: 250px;
+    width: 100%;
+  }
+}
+.banner .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  animation: floatAnimation 3s ease-in-out infinite alternate;
+}
+@keyframes floatAnimation {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .banner .logo {
+    top: 60%;
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .banner .logo {
+    width: 40%;
+    margin-left: 20px;
+  }
+}
+
+.video {
+  position: relative;
+  height: 100%;
+  z-index: 1;
+}
+@media only screen and (max-width: 1024px) {
+  .video {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .video {
+    display: none;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/****Flower rotation effect****/
+/****Location section with moving clouds****/
+/****We define the mixins breakpoints mobile and tablet****/
 .titleAnimation {
   display: inline-block;
   margin-right: 15px;
@@ -192,47 +427,47 @@
   }
 }
 
-.logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  animation: floatAnimation 3s ease-in-out infinite alternate;
+.fadeIn {
+  animation: fadeIn 1s ease-in-out;
 }
-@keyframes floatAnimation {
+@keyframes fadeIn {
   0% {
-    transform: translate(-50%, -50%);
-  }
-  50% {
-    transform: translate(-50%, -60%);
+    opacity: 0;
+    transform: translateY(200px);
   }
   100% {
-    transform: translate(-50%, -50%);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.blueCatMenu,
-.orangeCatMenu,
-.blackCatMenu {
-  animation: floatCat 3s ease-in-out infinite alternate;
-}
-@keyframes floatCat {
-  0% {
-    transform: translate(-50%, -100%) rotate(0deg);
-  }
-  50% {
-    transform: translate(-50%, -90%) rotate(-5deg);
-  }
-  100% {
-    transform: translate(-50%, -95%) rotate(0deg);
-  }
-}
-
-/* Styles pour le menu burger */
+/****Flower rotation effect****/
+/****Location section with moving clouds****/
+/****We define the mixins breakpoints mobile and tablet****/
+/*Menu burger */
 .main-navigation {
   display: flex;
-  position: fixed;
+  position: sticky;
   width: 1440px;
+}
+@media only screen and (max-width: 390px) {
+  .main-navigation {
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-navigation #titreMenu {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .main-navigation {
+    height: 80px;
+  }
+  .main-navigation li {
+    margin-left: -600px;
+  }
 }
 .main-navigation ul {
   font-weight: 800;
@@ -251,6 +486,17 @@
   margin-left: 450px;
   cursor: pointer;
   position: relative;
+}
+@media only screen and (max-width: 390px) {
+  .burgerBtn {
+    margin-top: 15px;
+    margin-left: 47%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .burgerBtn {
+    margin-left: -15px;
+  }
 }
 .burgerBtn span {
   width: 100%;
@@ -277,7 +523,7 @@
   transform: translateY(10px);
 }
 .burgerBtn.active span {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 .burgerBtn.active span::before {
   transform: translateY(0px) rotateZ(45deg);
@@ -286,7 +532,7 @@
   transform: translateY(0px) rotateZ(-45deg);
 }
 
-/* Styles pour le menu en plein écran */
+/*Menu buger fullscreen */
 .site-navigation .title-site {
   position: fixed;
 }
@@ -295,12 +541,20 @@
   position: fixed;
   top: 80px;
   width: 1440px;
-  height: 1024px;
+  height: 1440px;
   background-color: #FFF5E9;
   color: black;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease-in;
+}
+@media only screen and (max-width: 390px) {
+  .fullscreenMenu {
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+  }
 }
 .fullscreenMenu.open {
   overflow: hidden;
@@ -326,13 +580,30 @@
   text-align: center;
   margin-top: 190px;
 }
+@media only screen and (max-width: 1024px) {
+  .fullscreenMenu ul {
+    margin-right: 33%;
+    margin-top: 20%;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .fullscreenMenu ul {
+    margin: 80% 2%;
+  }
+}
 .fullscreenMenu li {
   font-weight: 400;
-  font-family: "Roboto";
+  font-family: "Roboto Mono";
   font-size: 64px;
-  line-height: 120px;
+  line-height: 84px;
   list-style-type: none;
   margin: 0;
+}
+@media only screen and (max-width: 390px) {
+  .fullscreenMenu li {
+    font-size: 45px;
+    line-height: 62px;
+  }
 }
 .fullscreenMenu a:hover {
   color: black;
@@ -343,6 +614,19 @@
   margin-top: 150px;
   font-size: 20px;
 }
+@media only screen and (max-width: 1024px) {
+  .fullscreenMenu p {
+    position: absolute;
+    bottom: 38%;
+    left: 28%;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .fullscreenMenu p {
+    position: absolute;
+    bottom: 10%;
+  }
+}
 .fullscreenMenu a {
   text-decoration: none;
 }
@@ -350,6 +634,27 @@
   position: absolute;
   left: 627px;
   top: 45px;
+}
+@media only screen and (max-width: 1024px) {
+  .fullscreenMenu .logoFullscreen {
+    left: 330px;
+    width: 20%;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .fullscreenMenu .logoFullscreen {
+    left: 27%;
+    top: 15%;
+    width: 150px;
+    height: 130px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .fullscreenMenu .logo {
+    width: 50%;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
 }
 .fullscreenMenu .orchidMenu {
   position: absolute;
@@ -364,6 +669,11 @@
   left: 289px;
   width: 70px;
   height: 70px;
+}
+@media only screen and (max-width: 1024px) {
+  .fullscreenMenu .flowerMenu {
+    left: 55%;
+  }
 }
 .fullscreenMenu .sunflowerMenu {
   position: absolute;
@@ -392,6 +702,28 @@
   left: 355px;
   width: 109px;
   height: 98px;
+  animation: floatCat 3s ease-in-out infinite alternate;
+}
+@keyframes floatCat {
+  0% {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -90%) rotate(-5deg);
+  }
+  100% {
+    transform: translate(-50%, -95%) rotate(0deg);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .fullscreenMenu .blueCatMenu {
+    right: 10%;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .fullscreenMenu .blueCatMenu {
+    left: 300px;
+  }
 }
 .fullscreenMenu .orangeCatMenu {
   position: absolute;
@@ -399,6 +731,27 @@
   left: 101px;
   width: 105px;
   height: 95px;
+  animation: floatCat 3s ease-in-out infinite alternate;
+}
+@keyframes floatCat {
+  0% {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -90%) rotate(-5deg);
+  }
+  100% {
+    transform: translate(-50%, -95%) rotate(0deg);
+  }
+}
+@media only screen and (max-width: 390px) {
+  .fullscreenMenu .orangeCatMenu {
+    top: 94%;
+    left: 58px;
+  }
+}
+.fullscreenMenu p {
+  margin-top: 125px;
 }
 .fullscreenMenu .blackCatMenu {
   position: absolute;
@@ -406,46 +759,129 @@
   left: 1076px;
   width: 135px;
   height: 128px;
+  animation: floatCat 3s ease-in-out infinite alternate;
+}
+@keyframes floatCat {
+  0% {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -90%) rotate(-5deg);
+  }
+  100% {
+    transform: translate(-50%, -95%) rotate(0deg);
+  }
+}
+@media only screen and (max-width: 390px) {
+  .fullscreenMenu .orchidMenu,
+  .fullscreenMenu .flowerMenu,
+  .fullscreenMenu .sunflowerMenu,
+  .fullscreenMenu .randomflowerMenu,
+  .fullscreenMenu .hibiscusMenu,
+  .fullscreenMenu .blackCatMenu {
+    display: none;
+  }
 }
 
-/*div .main-characters {
-    width: 1400px;
-}*/
 .story #characters {
-  width: 1440px;
-  height: 806px;
-}
-
-h3 {
-  text-align: left;
-  background-position: left;
-  padding: 50px 60px;
-}
-
-.swiper {
+  text-align: center;
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin: auto;
-  margin-left: -33.5em;
 }
+@media only screen and (max-width: 390px) {
+  .story #characters {
+    animation: none !important;
+  }
+}
+
+.story #characters h3 {
+  margin-right: 60%;
+}
+@media only screen and (max-width: 1024px) {
+  .story #characters h3 {
+    margin-right: 40%;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .story #characters h3 {
+    margin: 0;
+    font-size: 1.5em;
+    padding: 36px 60px;
+  }
+}
+
+.swiper-container {
+  padding-top: 100px;
+  width: 750px;
+}
+@media only screen and (max-width: 390px) {
+  .swiper-container {
+    height: 400px;
+  }
+}
+
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 480px;
-  height: 480px;
-  margin-right: 40px;
-  margin-left: 40px;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
 }
 .swiper-slide img {
+  width: 400px;
+  height: 400px;
   display: block;
-  width: 100%;
+}
+@media only screen and (max-width: 390px) {
+  .swiper-slide img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 1440px;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+  box-sizing: content-box;
+  justify-content: flex-start;
+  margin-right: 20px;
 }
 
 .site-footer::after {
-  display: none;
+  content: none;
 }
 
+@media only screen and (max-width: 390px) {
+  .site-footer {
+    padding-top: 50px;
+  }
+  .site-footer ul,
+  .site-footer li {
+    font-size: 11px;
+    margin-right: 4px;
+    margin-left: 10px;
+  }
+  .site-footer ul::after,
+  .site-footer li::after {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .site-footer ul,
+  li {
+    font-size: 11px;
+    margin-right: 4px;
+    margin-left: 10px;
+  }
+  .site-footer ul::after,
+  li::after {
+    content: none;
+  }
+}
 .site-footer::before {
   display: none;
 }/*# sourceMappingURL=style.css.map */

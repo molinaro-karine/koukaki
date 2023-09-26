@@ -1,22 +1,6 @@
 @import 'mixins/mixins';
-//Fade-in sections
-.fadeIn {
-    animation: fadeIn 1s ease-in-out;
 
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-            transform: translateY(200px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-}
-//apparition titres
+//Titles menu
 
 .titleAnimation {
     display: inline-block;
@@ -24,7 +8,8 @@
     opacity: 0;
     transform: translateY(100%);
 
-    transition: opacity 0.2s ease-in, transform 0.5s ease-in;
+    transition: opacity 0.2s ease-in, 
+    transform 0.5s ease-in;
 
     &.visibility {
         opacity: 1;
@@ -32,8 +17,8 @@
     }
 }
 
+//Rotating flowers
 
-//Rotation des fleurs
 .story h2,
 .story__article,
 #studio h2 {
@@ -63,50 +48,5 @@
     @include rotateFlowers;
 }
 
-//animation flottement de titre
-.logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    animation: floatAnimation 3s ease-in-out infinite alternate;
-
-
-    @keyframes floatAnimation {
-        0% {
-            transform: translate(-50%, -50%);
-        }
-
-        50% {
-            transform: translate(-50%, -60%);
-        }
-
-        100% {
-            transform: translate(-50%, -50%);
-        }
-    }
-}
-//animation flottement chat menu fullscreen
-
-.blueCatMenu,
-.orangeCatMenu,
-.blackCatMenu {
-    animation: floatCat 3s ease-in-out infinite alternate;
-
-
-    @keyframes floatCat {
-        0% {
-            transform: translate(-50%, -100%) rotate(0deg);
-        }
-
-        50% {
-            transform: translate(-50%, -90%) rotate(-5deg);
-        }
-
-        100% {
-            transform: translate(-50%, -95%) rotate(0deg);
-        }
-    }
-}
 
 

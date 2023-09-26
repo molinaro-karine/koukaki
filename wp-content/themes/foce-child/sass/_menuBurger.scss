@@ -1,14 +1,35 @@
-/* Styles pour le menu burger */
+@import 'mixins/mixins';
+
+/*Menu burger */
 .main-navigation {
     display: flex;
-    position: fixed;
+    position: sticky;
     width: 1440px;
+
+    @include devices(mobile) {
+       width: 100%;
+       height: 50px;
+       align-items: center;
+       justify-content: center;
+
+       #titreMenu {
+        display: none;
+    }
+    }
+    @include devices(tablet) {
+        height: 80px ;
+        li{
+            margin-left: -600px ;
+        }
+    }
 
     ul {
         font-weight: 800;
         display: flex;
         flex-direction: row;
         margin-left: 580px;
+
+      
     }
 
     button {
@@ -23,6 +44,15 @@
     margin-left: 450px;
     cursor: pointer;
     position: relative;
+
+        @include devices(mobile) {
+        margin-top: 15px;
+        margin-left: 47%;
+        }
+
+        @include devices(tablet) {
+            margin-left: -15px ;
+        }
 
     span {
         width: 100%;
@@ -54,7 +84,7 @@
     }
 
     &.active span {
-        background-color: transparent !important;
+        background-color: transparent;
 
         &::before {
             transform: translateY(0px) rotateZ(45deg);
@@ -66,7 +96,7 @@
     }
 }
 
-/* Styles pour le menu en plein écran */
+/*Menu buger fullscreen */
 
 .site-navigation .title-site {
     position: fixed;
@@ -77,12 +107,22 @@
     position: fixed;
     top: 80px;
     width: 1440px;
-    height: 1024px;
+    height: 1440px;
     background-color: #FFF5E9;
     color: black;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease-in;
+
+   
+    
+    @include devices(mobile) {
+        top: 50px ;
+        left: 0px ;
+        width: 100% ;
+        height: 100vh;
+    }
+    
 
     &.open {
         overflow: hidden;
@@ -111,15 +151,31 @@
         padding: 0;
         text-align: center;
         margin-top: 190px;
+
+        @include devices(tablet) {
+            margin-right: 33%;
+            margin-top: 20%;
+        }
+
+        @include devices(mobile) {
+            margin: 80% 2%;
+           
+        }
+    
     }
 
     li {
         font-weight: 400;
-        font-family: 'Roboto';
+        font-family: 'Roboto Mono';
         font-size: 64px;
-        line-height: 120px;
+        line-height: 84px;
         list-style-type: none;
         margin: 0;
+
+        @include devices(mobile) {
+            font-size: 45px;
+            line-height: 62px;
+        }
     }
 
     a:hover {
@@ -131,6 +187,16 @@
         text-align: center;
         margin-top: 150px;
         font-size: 20px;
+
+        @include devices(tablet){
+            position: absolute;
+            bottom: 38%;
+            left: 28%;
+        }
+        @include devices(mobile){
+            position: absolute;
+            bottom: 10%;
+        }
     }
 
     a {
@@ -142,8 +208,29 @@
         position: absolute;
         left: 627px;
         top: 45px;
-    }
 
+        @include devices(tablet) {
+            left: 330px;
+            width: 20%;
+        }
+
+        @include devices(mobile) {
+            left: 27%;
+            top: 15%;
+            width: 150px;
+            height: 130px;
+        
+        }
+        
+       
+    }
+    @include devices(mobile) {
+        .logo {
+            width: 50%;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+    }
     .orchidMenu {
         position: absolute;
         left: -60px;
@@ -157,6 +244,10 @@
         left: 289px;
         width: 70px;
         height: 70px;
+
+        @include devices(tablet) {
+          left: 55%;
+        }
     }
 
     .sunflowerMenu {
@@ -189,6 +280,16 @@
         left: 355px;
         width: 109px;
         height: 98px;
+
+        @include floatCat;
+
+        @include devices(tablet) {
+            right: 10%; 
+         }
+
+        @include devices(mobile) {
+           left: 300px; 
+        }
     }
 
     .orangeCatMenu {
@@ -197,12 +298,35 @@
         left: 101px;
         width: 105px;
         height: 95px;
+
+        @include floatCat;
+
+        @include devices(mobile) {
+            top:94%;
+            left:58px;
+        }
     }
+    p {
+        margin-top: 125px ;
+    }
+
     .blackCatMenu {
         position: absolute;
         top: 556px;
         left: 1076px;
         width: 135px;
         height: 128px;
+
+        @include floatCat;
+    }
+    @include devices(mobile) {
+        .orchidMenu,
+        .flowerMenu,
+        .sunflowerMenu,
+        .randomflowerMenu,
+        .hibiscusMenu,
+        .blackCatMenu {
+            display: none ;
+        }
     }
 }

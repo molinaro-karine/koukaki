@@ -1,12 +1,50 @@
 .banner {
     position: relative;
     overflow: hidden;
-    //margin-top: 0;
 
+    @include devices(tablet) {
+        min-height: 400px;
+    }
+
+    @include devices(mobile){
+        min-height: 250px;
+        width: 100%;  
+    }
+
+    .logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+
+       @include floatAnimation;
+
+        @include devices(tablet) {
+            top:60%;
+            width: 40%;
+        }
+
+        @include devices(mobile) {
+            width: 40%;
+            margin-left: 20px;
+        }
+    }
+}
     .video {
         position: relative;
         height: 100%;
-        margin-top: 120px;
         z-index: 1;
+    
+        @include devices(tablet) { 
+            width: 100%;
+            margin-top: 0;
+        }
+    
+        @include devices(mobile) { 
+            display: none; 
+        }
     }
-}
+
+    
+
+

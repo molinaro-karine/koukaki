@@ -1,7 +1,41 @@
-.site-footer::after {
-    display: none;
+.site-footer::after{
+    content:none;
 }
 
-.site-footer::before {
-    display: none;
-}
+@include devices(mobile) {   
+    .site-footer {
+        padding-top: 50px;
+
+        ul,
+        li {
+            font-size: 11px;
+            margin-right: 4px;
+            margin-left: 10px;
+
+            &::after {
+                display: none;
+            }
+            
+        }
+    }}
+@include devices(tablet) {   
+    .site-footer ul,
+        li {
+            font-size: 11px;
+            margin-right: 4px;
+            margin-left: 10px;
+
+           &::after  {
+                content: none ;
+            }
+        }
+        
+    }
+    .site-footer::before{
+        display: none ;
+    }
+ 
+
+
+
+

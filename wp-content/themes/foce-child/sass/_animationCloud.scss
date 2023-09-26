@@ -7,14 +7,34 @@
     min-height: 699px;
     background-size: cover;
     margin-top: -100px;
-   
-  
-   
+    
+    @include devices(mobile) {
+        min-height: 10vh;
+        animation: none !important;
+    }
 
+    @include devices(tablet) {
+        min-height: 500px;
+    }
+    
     .containerCloud {
         margin-left: 10em;
         margin-top: 100px;
+
+        @include devices(mobile) {
+            margin-left: 73px;
+            height: 31vh;
+            min-height: 10vh;
+            p{
+                padding-left: 0;
+            }
+            h3{
+                margin-top: 74px;
+                margin-left: 0;
+            }
+        }
     }
+       
 
     .bigCloud {
         width: 316px;
@@ -23,6 +43,10 @@
         top: -380px;
         left: 880px;
         filter: blur(10px);
+
+        @include devices(tablet) {
+            display: none;
+        }
            
     }
     .littleCloud {
@@ -32,7 +56,10 @@
         left: 650px;
         position: relative;
         filter: blur(10px);
-          
+
+        @include devices(tablet) {
+            display: none;
+        }
     }
     .moveCloud{
         @include moveCloud;

@@ -1,3 +1,5 @@
+@import 'mixins/mixins';
+
 .eventOscars {
     position: relative;
     display: flex;
@@ -7,11 +9,33 @@
     margin-right: 230px;
     align-items: center;
 
+    @include devices(mobile) {
+        flex-direction: column;
+        margin: 26px;
+    
+            &::before {
+                content: none;
+            }
+        }
+
     &::before {
         content: url('./assets/images/Sunflower.png');
         position: absolute;
         left: -130px;
         top: -80px;
+        
+        @include devices(tablet) {
+            content: none;
+        }
+
+        @include devices(mobile) {
+            flex-direction: column;
+            margin: 26px;
+        
+            .eventOscars::after {
+                display: none;
+            }
+        }
     }
 
     &::after {
@@ -20,22 +44,30 @@
         right: -320px;
         top: -130px;
         z-index: -1;
-
+        @include devices(tablet) {
+            content: none;
+        }
     }
 
     .imgOscars {
         mix-blend-mode: darken;
         margin-top: -30px;
+        
 
         .oscar_img{
             height: 129px;
             width: 278px;
+            @include devices(mobile) {
+                margin-right: 31px;
+                height: 84px;
+                width: 210px;
+                margin-top: 20px;
+                }
+            }
         }
-       
-    }
 
     .titreOscar {
-        font-size: 42px;
+        font-size: 3rem;
         font-weight: 700;
         color: #FFF5E9;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -48,6 +80,24 @@
         text-align: left;
         height: 350px;
 
-       
+        @include devices(tablet) { 
+            font-size: 1.5rem;
+            padding: 37px;
+            height: 20vh;
+            line-height: 30px;
+            .titleAnimation{
+                opacity: 1;
+            }
+            .fadeIn{
+                content: none;
+            }
+        }
+        @include devices(mobile) {
+            height: 20vh;
+            width: 403px;
+            font-size: 20px;
+            line-height: 25px;
+            padding: 35px;
+        }
     }
 }

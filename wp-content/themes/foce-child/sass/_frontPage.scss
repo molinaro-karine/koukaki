@@ -1,0 +1,50 @@
+@import 'mixins/mixins';
+
+
+main {
+    overflow: hidden;
+}
+
+.story {
+    margin-top: 100px;
+
+    h2 {
+       
+        &::after {
+            height: 155px;
+        }
+    }
+    @include devices(mobile){
+        margin-top: 28px;
+        .titleAnimation{
+            opacity: 1;
+        }
+    }
+}
+
+#studio ::after {
+    height: 108px;
+}
+@include devices(mobile) {
+    .story__article{
+         &::after {
+            display: none;
+        }
+        #studio h2::before {
+            display: none;
+        }
+        font-size: 1.2em;
+        text-align: left;
+        width: 92%;
+    }
+    .story h2,#studio h2{
+        font-size: 1.5em;
+        width: 100%;
+        text-align: center;
+        .titleAnimation{
+            opacity: 1;
+        }
+    }
+}
+
+

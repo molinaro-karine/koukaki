@@ -1,40 +1,61 @@
-/*div .main-characters {
-    width: 1400px;
-}*/
-
 .story #characters {
-    width: 1440px;height: 806px;
-}
-
-h3 {
-    text-align: left;
-    background-position: left;
-    padding: 50px 60px;
-}
-
-.swiper {
+    text-align: center;
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin: auto;
-    margin-left: -33.5em;
 
+    @include devices(mobile) {   
+        animation: none !important;
+    }
+}
+.story #characters h3 {
+    margin-right: 60%;
+    
+    @include devices(tablet) {
+        margin-right: 40%;
+    }
+    @include devices(mobile) {   
+        margin: 0;
+        font-size: 1.5em;
+        padding: 36px 60px;
+    }
+}
+.swiper-container {
+    padding-top: 100px;
+    width: 750px;
 
-    &-slide {
-        background-position: center;
-        background-size: cover;
-        width: 480px;
-        height: 480px;
-        margin-right: 40px;
-        margin-left: 40px;
-
-
-        img {
-            display: block;
-            width: 100%;
-
-
-        }
+    @include devices(mobile) {   
+        height: 400px;
     }
 }
 
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+
+    img { 
+        width: 400px;
+        height: 400px;
+        display: block;
+
+        @include devices(mobile) {   
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
+.swiper-wrapper {
+    position: relative;
+    width: 1440px;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial);
+    box-sizing: content-box;
+    justify-content: flex-start;
+    margin-right: 20px;
+
+   
+}
